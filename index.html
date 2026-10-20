@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Slide Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Markdown Slide Maker</h1>
+      <p class="tagline">Create, edit and present your slides</p>
+    </div>
+    <div class="top-actions">
+      <button id="newBtn" class="secondary">New</button>
+      <button id="saveBtn" class="primary">Save Slides</button>
+      <button id="presentBtn" class="primary">Present</button>
+    </div>
+  </header>
+
+  <main id="workspace" class="workspace">
+    <section class="editor-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Markdown Editor</h2>
+          <p>Use <code>---</code> on a separate line to start another slide.</p>
+        </div>
+        <button id="addSlideBtn" class="secondary">+ Add Slide</button>
+      </div>
+      <textarea id="markdownInput" spellcheck="false" aria-label="Markdown slide editor"></textarea>
+      <div class="editor-footer">
+        <span id="saveStatus">Your work is saved in this browser when you press Save.</span>
+        <span>Shortcut: Ctrl + S</span>
+      </div>
+    </section>
+
+    <section class="preview-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Live Preview</h2>
+          <p>Changes appear here as you type.</p>
+        </div>
+        <span class="live-label"><i></i> Live</span>
+      </div>
+      <div class="slide-shell">
+        <article id="previewSlide" class="slide"></article>
+        <div class="slide-controls">
+          <button id="previewPrev" class="control-btn" aria-label="Previous slide">←</button>
+          <span id="previewCount" class="slide-count">1 / 1</span>
+          <button id="previewNext" class="control-btn" aria-label="Next slide">→</button>
+          <button id="previewFullscreen" class="control-btn full-btn" aria-label="Enter full screen">⛶</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="presentation" class="presentation hidden">
+    <article id="presentationSlide" class="slide presentation-slide"></article>
+    <div class="slide-controls presentation-controls">
+      <button id="presentPrev" class="control-btn" aria-label="Previous slide">←</button>
+      <span id="presentCount" class="slide-count">1 / 1</span>
+      <button id="presentNext" class="control-btn" aria-label="Next slide">→</button>
+      <button id="presentFullscreen" class="control-btn full-btn" aria-label="Enter full screen">⛶</button>
+      <button id="exitPresentBtn" class="control-btn exit-btn">Exit presentation</button>
+    </div>
+  </section>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
